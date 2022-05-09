@@ -1,0 +1,13 @@
+Historias de usuario:
+
+* Como usuario deseo poder visualizar a cada pais participante con su bandera
+* Como usuario deseo poder visualizar los paises ordenados en sus grupos
+* Como usuario deseo poder arrastrar los paises a la casilla de la siguiente fase
+* Como usuario deseo poder compartir mi predicción con conocidos
+* Como usuario deseo poder visualizar de forma rápida los paises que van quedando eliminados y poder seleccionar un ganador final en 3er puesto y final
+* Como usuario deseo al hacer hover sobre el encuentro recibir información del mismo (fecha, horario, lugar)
+* Como usuario dese un menu donde poder resetear la predicción, volver al home y la opcion de compartir predicción
+* Como usuario deseo un header informativo sobre la app
+* Como usuario deseo un espacio dedicado a como utilizar la app
+* Como usuario deseo un contador al comienzo del mundial
+* Como usuario deseo seleccionar mi idioma (arg, ing, por)
