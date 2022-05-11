@@ -1,0 +1,36 @@
+.navPrediction{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 2rem;
+    @include tablet{
+        padding: 1rem .5rem;
+    }
+    h2{
+        font-size: 2rem;
+        @include tablet{
+            font-size: 1.4rem;
+            width: 15rem;
+            text-align: center;
+        }
+    }
+    img{
+        width: 4rem;
+        cursor: pointer;
+        @include tablet{
+            width: 3rem;
+        }
+    }
+    select{
+        padding: .5rem;
+        text-align: center;
+        border-radius: .4rem;
+        font-family: $fuente_base;
+        outline: none;
+        @include tablet{
+            font-size: .8rem;
+            padding: .2rem;
+        }
+    }
+}

@@ -2,6 +2,9 @@
     "nav.home": "Inicio",
     "nav.use": "Uso",
     "nav.prediction": "Predicción",
+
+    "navPrediction.group-stage.title": "¿Quien pasa a la fase de grupos?",
+    "navPrediction.final.title": "¿Cómo termina esta copa del mundo?",
     
     "header.title": "¡Empeza a vivir el mundial desde ahora!",
     "header.subtitle": "Hacé tu predicción del mundial y compartí tu resultado con tus amigos.",

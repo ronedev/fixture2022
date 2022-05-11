@@ -34,22 +34,26 @@ const Navbar = () => {
                     </a></li>
                 </ul>
             </div>
-            <select name="lang" onChange={(e) => LangContext.cambiarIdioma(e.target.value)}>
-                <option value="en-US" selected={LangContext.lenguaje === 'en-US' ? true : false}>English</option>
-                <option value="es-AR" selected={LangContext.lenguaje === 'es-AR' ? true : false}>Spanish</option>
-                <option value="pt-BR" selected={LangContext.lenguaje === 'pt-BR' ? true : false}>Portuguese</option>
+            <select name="lang" onChange={(e) => LangContext.cambiarIdioma(e.target.value)} defaultValue={
+                LangContext.lenguaje === 'en-US' ? 'en-US' :
+                    LangContext.lenguaje === 'es-AR' ? 'es-AR' :
+                        LangContext.lenguaje === 'pt-BR' ? 'pt-BR' : 'en-US'
+            }>
+                <option value="en-US">English</option>
+                <option value="es-AR">Spanish</option>
+                <option value="pt-BR">Portuguese</option>
             </select>
             {/* boton de mobile menu */}
-            <img src={menuMobile} alt="hamburguer menu icon" id='menuMobile' onClick={()=> {
-                if(mobileMenuVisible){
+            <img src={menuMobile} alt="hamburguer menu icon" id='menuMobile' onClick={() => {
+                if (mobileMenuVisible) {
                     setMobileMenuVisible(false)
                     setDesactiveMobileMenu(true)
-                }else{
+                } else {
                     setMobileMenuVisible(true)
                     setDesactiveMobileMenu(false)
                 }
             }} />
-            
+
             <div className={mobileMenuVisible ? 'mobileMenu active' : desactiveMobileMenu ? 'mobileMenu desactive' : 'mobileMenu'}>
                 <ul className='navList'>
                     <li><a href="#home">
@@ -71,10 +75,14 @@ const Navbar = () => {
                         />
                     </a></li>
                 </ul>
-                <select name="lang" onChange={(e) => LangContext.cambiarIdioma(e.target.value)}>
-                    <option value="en-US" selected={LangContext.lenguaje === 'en-US' ? true : false}>English</option>
-                    <option value="es-AR" selected={LangContext.lenguaje === 'es-AR' ? true : false}>Spanish</option>
-                    <option value="pt-BR" selected={LangContext.lenguaje === 'pt-BR' ? true : false}>Portuguese</option>
+                <select name="lang" onChange={(e) => LangContext.cambiarIdioma(e.target.value)} defaultValue={
+                    LangContext.lenguaje === 'en-US' ? 'en-US' :
+                        LangContext.lenguaje === 'es-AR' ? 'es-AR' :
+                            LangContext.lenguaje === 'pt-BR' ? 'pt-BR' : 'en-US'
+                }>
+                    <option value="en-US">English</option>
+                    <option value="es-AR">Spanish</option>
+                    <option value="pt-BR">Portuguese</option>
                 </select>
             </div>
         </nav>

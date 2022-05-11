@@ -40,6 +40,9 @@ const Countdown = () => {
 
     useEffect(()=>{
         getTime()
+        setInterval(()=>{
+            getTime()
+        }, 60000)
     },[])
 
   return (
