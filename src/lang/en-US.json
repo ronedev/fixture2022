@@ -6,5 +6,16 @@
     "header.title": "Start living the world cup from now!",
     "header.subtitle": "Make your World Cup prediction and share your result with your friends",
     "header.description": "Based on the 32 classified teams, make your predictions for the group stage, round of 16, quarterfinals, semi-final and Final! Share it with your friends and save the link or post so that on December 18 you can compare your results.",
-    "header.btn": "Start prediction"
+    "header.btn": "Start prediction",
+
+    "countdown.title": "How long to Qatar?",
+    "countdown.days": "Days",
+    "countdown.hours": "Hours",
+    "countdown.minutes": "Minutes",
+
+    "use.title": "How do i make my prediction?",
+    "use.description": "Once on the prediction page you will see the groups and their corresponding countries, in the first round all you have to do is select who you think will come out first and second in each group. In the elimination round, you must click on the country that you think will win the match on each date and advance based on your choices. Enjoy it!",
+    "use.btn": "Start prediction",
+
+    "footer.text": "Developed whit ❤ by Agustin Vera"
 }

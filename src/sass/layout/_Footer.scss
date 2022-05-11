@@ -1,0 +1,20 @@
+.footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 3rem 0;
+    h4{
+        font-size: 1.2rem;
+        font-weight: 300;
+    }
+    .redes{
+        width: 20rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        img{
+            width: 4rem;
+        }
+            
+    }
+}

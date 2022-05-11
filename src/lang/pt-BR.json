@@ -6,5 +6,16 @@
     "header.title": "¡Comece a viver a copa do mundo a partir de agora!",
     "header.subtitle": "Faça sua previsão da Copa do Mundo e compartilhe seu resultado com seus amigos",
     "header.description": "Com base nas 32 equipes classificadas, faça suas previsões para a fase de grupos, oitavas de final, quartas de final, semifinal e final! Compartilhe com seus amigos e salve o link ou poste para que no dia 18 de dezembro você possa comparar seus resultados.",
-    "header.btn": "Iniciar previsão"
+    "header.btn": "Iniciar previsão",
+
+    "countdown.title": "¿Quanto tempo para o Catar?",
+    "countdown.days": "Dias",
+    "countdown.hours": "Horas",
+    "countdown.minutes": "Minutos",
+
+    "use.title": "Como faço minha previsão?",
+    "use.description": "Uma vez na página de previsão, você verá os grupos e seus países correspondentes, na primeira rodada tudo o que você precisa fazer é selecionar quem você acha que sairá primeiro e segundo em cada grupo. Na rodada de eliminação, você deve clicar no país que acha que vencerá a partida em cada data e avançar com base em suas escolhas. Apreciá-lo!",
+    "use.btn": "Iniciar previsão",
+
+    "footer.text": "Desenvolvido com ❤ por Agustin Vera"
 }

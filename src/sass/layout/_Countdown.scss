@@ -1,0 +1,32 @@
+.countdownContainer{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: $secundario;
+    padding: 3rem 0;
+    h2{
+        font-size: 2rem;
+    }
+    .countdown{
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        p{
+            font-family: $fuente_base;
+            font-size: 2rem;
+            text-align: center;
+            color: $principal;
+            span{
+                font-size: 8rem;
+                font-weight: 900;
+            }
+        }
+        img{
+            width: 4rem;
+            margin: 0 4rem;
+        }
+    }
+}

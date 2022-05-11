@@ -6,5 +6,16 @@
     "header.title": "¡Empeza a vivir el mundial desde ahora!",
     "header.subtitle": "Hacé tu predicción del mundial y compartí tu resultado con tus amigos.",
     "header.description": "En base a los 32 seleccionados clasificados armá tus predicciones para la fase de grupos, octavos, cuartos, semis y ¡Final! Compartilo con tus amigos y guardá el link o la publicación para que el 18 de Diciembre puedas comparar tus resultados.",
-    "header.btn": "Iniciar predicción"
+    "header.btn": "Iniciar predicción",
+
+    "countdown.title": "¿Cuanto falta para Qatar?",
+    "countdown.days": "Días",
+    "countdown.hours": "Horas",
+    "countdown.minutes": "Minutos",
+
+    "use.title": "¿Cómo hago mi predicción?",
+    "use.description": "Una vez en la página de predicción verás los grupos y sus correspondientes paises, en la primer ronda lo unico que debes hacer es seleccionar quien crees que saldrá primero y segundo de cada grupo. En la ronda de eliminatorias se debe ir haciendo click en el pais que crees que ganará el partido de cada fecha e ir avanzando en base a tus elecciones. ¡Disfrutalo!",
+    "use.btn": "Iniciar predicción",
+
+    "footer.text": "Desarrollado con ❤ por Agustin Vera"
 }
