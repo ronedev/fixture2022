@@ -1,0 +1,48 @@
+.header{
+    position: relative;
+    height: 80vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4rem;
+    .headerDescription, .headerImage{
+        z-index: 10;
+    }
+    .headerDescription{
+        height: 100%;
+        width: 50%;
+        h1{
+            font-size: 4.5rem;
+        }
+        p{
+            font-size: 1.2rem;
+            font-weight: 400;
+            span{
+                display: block;
+                font-weight: 900;
+            }
+        }
+    }
+    .headerImage{
+        height: 100%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        img{
+            width: 30rem;
+            filter: drop-shadow(1rem 0rem 1rem rgba(0,0,0, .7));
+        }
+    }
+    .backgroundForm{
+        position: absolute;
+        width: 100vw;
+        height: 50rem;
+        left: 0;
+        bottom: 0%;
+        background: $secundario;
+        clip-path: polygon(
+            56% 62%, 77% 49%, 100% 38%, 100% 100%, 0 100%, 0 66%, 11% 70%, 21% 72%, 34% 71%, 46% 67%
+        );
+    }
+}

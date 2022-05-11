@@ -1,0 +1,115 @@
+.nav{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    position: relative;
+    .logoNav{
+        display: flex;
+        align-items: center;
+        h2{
+            font-family: $fuente_base;
+            font-size: 2rem;
+            &:hover{
+                cursor: pointer;
+            }
+            span{
+                color: $principal;
+                font-family: $fuente_titulos;
+                font-weight: 900;
+            }
+        }
+    }
+    select{
+        padding: .5rem;
+        text-align: center;
+        border-radius: .4rem;
+        font-family: $fuente_base;
+        outline: none;
+        @include tablet{
+            display: none;
+        }
+    }
+    #menuMobile{
+        display: none;
+        @include tablet{
+            display: block;
+            width: 3rem;
+        }
+    }
+}
+
+.navList{
+    display: flex;
+    list-style: none;
+    @include tablet{
+        display: none;
+    }
+    a{
+        text-decoration: none;
+        color: $negro;
+        font-family: $fuente_base;
+        font-size: 1.1rem;
+        margin-right: 4rem;
+        &:hover{
+            color: $principal;
+        }
+    }
+}
+
+//Mobile menu
+.mobileMenu{
+    position: absolute;
+    width: 100vw;
+    height: 85vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: $blanco;
+    top: 100%;
+    left: -300%;
+    z-index: 50;
+    select{
+        @include tablet{
+            display: flex;
+        }
+    }
+    .navList{
+        @include tablet{
+            display: flex;
+            flex-direction: column;
+            height: 15rem;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 2rem;
+            a{
+                font-size: 2rem;
+            }
+        }
+    }
+    &.active{
+        animation: posicionar .4s ease-in-out forwards;
+    }
+    &.desactive{
+        animation: reposicionar .4s ease-in-out forwards;
+    }
+}
+
+@keyframes posicionar{
+    from{
+        left: 300%;
+    }
+    to{
+        left: 0%;
+    }
+}
+@keyframes reposicionar{
+    from{
+        left: 0%;
+    }
+    to{
+        left: -300%;
+    }
+}
