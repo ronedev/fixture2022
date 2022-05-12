@@ -41,6 +41,39 @@ html {
   }
 }
 
+.country{
+  border: 1px solid $negro;
+  border-radius: 4px;
+  background-color: $blanco;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 8rem;
+  height: 3rem;
+  padding: .4rem;
+  font-style: $fuente_titulos;
+  font-weight: 900;
+  font-size: 1.3rem;
+  cursor: pointer;
+  &:hover{
+    background-color: $success;
+  }
+  &.success{
+    background-color: $success;
+  }
+  &.warning{
+    background-color: $warning;
+  }
+  &.error{
+    background-color: $error;
+  }
+  img{
+    width: 3rem;
+    height: 1.8rem;
+    border-radius: .2rem;
+  }
+}
+
 // body {
 //   background-color: $secundario;
 // }

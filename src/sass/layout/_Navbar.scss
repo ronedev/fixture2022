@@ -1,9 +1,18 @@
+.navContainer{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: $blanco;
+    width: 100%;
+    z-index: 200;
+}
+
 .nav{
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1rem 2rem;
+    padding: 0 2rem;
     position: relative;
     .logoNav{
         display: flex;

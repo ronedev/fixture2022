@@ -1,0 +1,56 @@
+.groupStageContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100vw;
+    height: 100%;
+    .examplesContainer{
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        width: 80%;
+        text-align: center;
+        margin-bottom: 2rem;
+        button{
+            margin-top: .7rem;
+        }
+    }
+    .groupsGrid{
+        display: grid;
+        justify-items: center;
+        align-content: center;
+        gap: 3rem;
+        grid-template-columns: repeat(4, 1fr);
+        padding-bottom: 5rem;
+        @include tablet{
+            grid-template-columns: repeat(2,1fr);
+            gap: 1rem;
+        }
+        .grupo{
+            border: 1px solid $negro;
+            width: 13rem;
+            height: 20rem;
+            display: grid;
+            justify-items: center;
+            align-content: center;
+            border-radius: .7rem;
+            h2{
+                margin: 0;
+                color: $principal;
+            }
+            button{
+                margin-top: 1rem;
+            }
+        }
+    }
+    .btnContainer{
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        margin: 4rem;
+        .btn1{
+            height: 3rem;
+        }
+    }
+}
