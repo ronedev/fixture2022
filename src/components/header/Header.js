@@ -24,7 +24,7 @@ const Header = () => {
                         defaultMessage='Based on the 32 classified teams, make your predictions for the group stage, round of 16, quarterfinals, semi-final and Final! Share it with your friends and save the link or post so that on December 18 you can compare your results.'
                     />
                 </p>
-                <button className='btn1' onClick={()=> window.location = '/prediction/group-stage'}>
+                <button className='btn1' onClick={()=> window.location = '/prediction'}>
                     <FormattedMessage
                         id='header.btn'
                         defaultMessage='Start prediction'

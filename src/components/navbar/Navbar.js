@@ -27,7 +27,7 @@ const Navbar = () => {
                                 defaultMessage='Use'
                             />
                         </a></li>
-                        <li><a href="/prediction/group-stage">
+                        <li><a href="/prediction">
                             <FormattedMessage
                                 id='nav.prediction'
                                 defaultMessage='Prediction'
@@ -69,7 +69,7 @@ const Navbar = () => {
                                 defaultMessage='Use'
                             />
                         </a></li>
-                        <li><a href="/prediction/group-stage">
+                        <li><a href="/prediction">
                             <FormattedMessage
                                 id='nav.prediction'
                                 defaultMessage='Prediction'

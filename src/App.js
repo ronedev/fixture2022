@@ -24,9 +24,9 @@ function App() {
             </>
           } />
 
-          <Route path='/prediction/group-stage' element={
+          <Route path='/prediction' element={
             <>
-              <NavbarPrediction path={'/prediction/group-stage'}/>
+              <NavbarPrediction/>
               <GroupStage />
             </>
           } />

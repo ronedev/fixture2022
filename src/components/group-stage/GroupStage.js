@@ -1,11 +1,21 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import Groups from './Groups'
 import { listadoPaises } from './listadoPaises'
+import toast, { Toaster } from 'react-hot-toast'
+import { errorsContext } from 'components/context/errorsContext'
+import { clasificadosContext } from 'components/context/clasificadosContext'
+import KnockoutRound from 'components/knockout-round/KnockoutRound'
 
 const GroupStage = () => {
 
   //Estado donde se almacenaran los paises
   const [countrys, setCountrys] = useState([])
+
+  //Estado para pasar a la siguiente ronda
+  const [nextRound, setNextRound] = useState(false)
+
+  const { errores } = useContext(errorsContext)
+  const { validateClasificados } = useContext(clasificadosContext)
 
   useEffect(() => {
     //Funcion que trae a los paises desde la api
@@ -32,49 +42,72 @@ const GroupStage = () => {
   }, [])
 
   return (
-    <section className='groupStageContainer'>
-      <div className='examplesContainer'>
-        <h4 className='text'>Primero<br />
-          <button className='country success'>
-            {/* Si country contiene algo se ejecuta el contenido */}
-            {countrys.length > 0 &&
-              <>
-                <img src={countrys[21].flags.png} alt="flag icon" />
-                {countrys[21].fifa}
-              </>
+    <>
+      {nextRound ? <KnockoutRound countrys={countrys}/> :
+        <section className='groupStageContainer'>
+          <div className='examplesContainer'>
+            <h4 className='text'>Primero<br />
+              <button className='country success'>
+                {/* Si country contiene algo se ejecuta el contenido */}
+                {countrys.length > 0 &&
+                  <>
+                    <img src={countrys[21].flags.png} alt="flag icon" />
+                    {countrys[21].fifa}
+                  </>
+                }
+              </button>
+            </h4>
+            <h4 className='text'>Segundo<br />
+              <button className='country warning'>
+                {/* Si country contiene algo se ejecuta el contenido */}
+                {countrys.length > 0 &&
+                  <>
+                    <img src={countrys[9].flags.png} alt="flag icon" />
+                    {countrys[9].fifa}
+                  </>
+                }
+              </button>
+            </h4>
+            <h4 className='text'>Eliminado<br />
+              <button className='country error'>
+                {/* Si country contiene algo se ejecuta el contenido */}
+                {countrys.length > 0 &&
+                  <>
+                    <img src={countrys[2].flags.png} alt="flag icon" />
+                    {countrys[2].fifa}
+                  </>
+                }
+              </button>
+            </h4>
+          </div>
+          <div className='groupsGrid'>
+            <Groups countrys={countrys} />
+          </div>
+          <div className='btnContainer'>
+            <button className='btn1' onClick={() => {
+              if (validateClasificados()) {
+                setNextRound(true)
+              } else {
+                if (errores.length > 0) {
+                  toast(errores[0])
+                }
+              }
+            }}>Siguiente ronda</button>
+          </div>
+          <Toaster toastOptions={
+            {
+              style: {
+                color: '#1E213A',
+                fontFamily: 'Raleway',
+                fontWeight: '500',
+                backgroundColor: '#C7B95A',
+                fontSize: '12px'
+              }
             }
-          </button>
-        </h4>
-        <h4 className='text'>Segundo<br />
-          <button className='country warning'>
-            {/* Si country contiene algo se ejecuta el contenido */}
-          {countrys.length > 0 &&
-              <>
-                <img src={countrys[9].flags.png} alt="flag icon" />
-                {countrys[9].fifa}
-              </>
-            }
-          </button>
-        </h4>
-        <h4 className='text'>Eliminado<br />
-          <button className='country error'>
-            {/* Si country contiene algo se ejecuta el contenido */}
-          {countrys.length > 0 &&
-              <>
-                <img src={countrys[2].flags.png} alt="flag icon" />
-                {countrys[2].fifa}
-              </>
-            }
-          </button>
-        </h4>
-      </div>
-      <div className='groupsGrid'>
-        <Groups countrys={countrys} />
-      </div>
-      <div className='btnContainer'>
-        <button className='btn1'>Siguiente ronda</button>
-      </div>
-    </section>
+          } />
+        </section>
+      }
+    </>
   )
 }
 

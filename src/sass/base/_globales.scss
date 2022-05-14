@@ -67,6 +67,9 @@ html {
   &.error{
     background-color: $error;
   }
+  &.vacio{
+    background-color: $gris;
+  }
   img{
     width: 3rem;
     height: 1.8rem;
