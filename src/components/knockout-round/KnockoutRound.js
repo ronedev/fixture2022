@@ -3,11 +3,10 @@ import { cuartosContext } from 'components/context/cuartosContext'
 import React, { useContext } from 'react'
 import Cuartos from './Cuartos'
 
-const KnockoutRound = ({ countrys }) => {
+const KnockoutRound = () => {
     const { clasificados } = useContext(clasificadosContext)
 
-    const {setCountryCuartos, cuartosA, cuartosB} = useContext(cuartosContext)
-    console.log(cuartosA, cuartosB)
+    const {cuartosA, cuartosB} = useContext(cuartosContext)
 
     const getOctavosA = () => {
         let octavosA = []
@@ -34,37 +33,42 @@ const KnockoutRound = ({ countrys }) => {
     return (
         <>
         <section className='knockoutRound'>
-            <div className='octavos'>
-                {getOctavosA().map((country, idx) => {
-                    return (
-                        <>
-                            <button className='country title' onClick={
-                                () => setCountryCuartos(idx, country, 'A')
-                            }>
-                                <img src={country.flag} alt="flag icon" />
-                                {country.name}
-                            </button>
-                        </>
-                    )
-                })}
-            </div>
+            <Octavos octavosEquipos={getOctavosA()} grupo={'A'} />
             <Cuartos cuartosA={cuartosA} cuartosB={cuartosB}/>
-            <div className='octavos'>
-                {getOctavosB().map((country, idx) => {
+            <Octavos octavosEquipos={getOctavosB()} grupo={'B'} />
+        </section>
+        <div className='btnFinalizarContainer'>
+            <button className='btn1'>Finalizar</button>
+        </div>
+        </>
+    )
+}
+
+const Octavos = ({octavosEquipos, grupo})=>{
+
+    const {setCountryCuartos, cuartosA, cuartosB} = useContext(cuartosContext)
+    
+    return(
+        <div className='octavos'>
+            <h3 className='title'>Octavos {grupo}</h3>
+                {octavosEquipos.map((country, idx) => {
+                    let esPar = idx % 2 === 0
                     return (
                         <>
-                            <button className='country title' onClick={
-                                () => setCountryCuartos(idx, country, 'B')
+                            {esPar && idx !== 0 && <span className='espacio'></span>}
+                            <button className={
+                                cuartosA.includes(country) || cuartosB.includes(country) ? 'country title success' : 'country title'}
+                            onClick={
+                                () => setCountryCuartos(idx, country, grupo)
                             }>
                                 <img src={country.flag} alt="flag icon" />
                                 {country.name}
                             </button>
+                            {esPar && <h2 className='title' style={{'margin': 0}}>VS</h2>}
                         </>
                     )
                 })}
             </div>
-        </section>
-        </>
     )
 }
 

@@ -5,6 +5,8 @@ import App from './App';
 import { ClasificadosProvider } from 'components/context/clasificadosContext';
 import { ErrorsProvider } from 'components/context/errorsContext';
 import { CuartosProvider } from 'components/context/cuartosContext';
+import { SemisProvider } from 'components/context/semisContext';
+import { FinalProvider } from 'components/context/finalContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -13,7 +15,11 @@ root.render(
       <ErrorsProvider>
         <ClasificadosProvider>
           <CuartosProvider>
-            <App />
+            <SemisProvider>
+              <FinalProvider>
+                <App />
+              </FinalProvider>
+            </SemisProvider>
           </CuartosProvider>
         </ClasificadosProvider>
       </ErrorsProvider>

@@ -4,14 +4,14 @@ const cuartosContext = React.createContext()
 
 const CuartosProvider = ({children}) =>{
 
-    const [equipo1A, setEquipo1A] = useState()
-    const [equipo1B, setEquipo1B] = useState()
-    const [equipo2A, setEquipo2A] = useState()
-    const [equipo2B, setEquipo2B] = useState()
-    const [equipo3A, setEquipo3A] = useState()
-    const [equipo3B, setEquipo3B] = useState()
-    const [equipo4A, setEquipo4A] = useState()
-    const [equipo4B, setEquipo4B] = useState()
+    const [equipo1A, setEquipo1A] = useState(null)
+    const [equipo1B, setEquipo1B] = useState(null)
+    const [equipo2A, setEquipo2A] = useState(null)
+    const [equipo2B, setEquipo2B] = useState(null)
+    const [equipo3A, setEquipo3A] = useState(null)
+    const [equipo3B, setEquipo3B] = useState(null)
+    const [equipo4A, setEquipo4A] = useState(null)
+    const [equipo4B, setEquipo4B] = useState(null)
 
     let cuartosA = [
         equipo1A,

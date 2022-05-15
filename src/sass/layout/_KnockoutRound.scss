@@ -1,5 +1,56 @@
 .knockoutRound{
     width: 100%;
     display: flex;
-
+    align-items: center;
+    justify-content: space-evenly;
+    .octavos,.cuartos,.semis,.finalContainer{
+        border: 1px solid $negro;
+        padding: .5rem;
+        border-radius: 1rem;
+    }
+    .octavos, .cuartos, .semis, .final, .tercer{
+        display: grid;
+        align-content: space-around;
+        justify-items: center;
+        h2{
+            display: flex;
+            align-items: center;
+        }
+    }
+    .octavos{
+        max-height: 85vh;
+        grid-template-rows: repeat(15, 1fr);
+    }
+    .cuartos{
+        grid-template-rows: repeat(7, 1fr);
+    }
+    .semis{
+        grid-template-rows: repeat(2, 1fr);
+    }
+    .finalContainer{
+        display: grid;
+        gap: 4rem;
+        justify-items: center;
+        button{
+            margin-top: .5rem;
+        }
+        .final,.tercer{
+            grid-template-rows: repeat(3,1fr);
+        }
+        .final{
+            .country{
+                width: 10rem;
+            }
+        }
+    }
+    .espacio{
+        width: 5rem;
+        height: 1rem;
+    }
+}
+.btnFinalizarContainer{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
 }
