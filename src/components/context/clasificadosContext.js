@@ -28,64 +28,64 @@ const ClasificadosProvider = ({ children }) => {
     ]
 
     const setCountry = (grupo, country) => {
-
+        console.log(clasificados)
         switch (grupo) {
             case 'A':
                 //Se evalua si el grupo ya tiene 2 equipos seleccionados como primero y segundo
                 if (grupoA.length < 2) {
                     setGrupoA(grupoA => [...grupoA, country])
                 } else {
-                    //En caso de que se tenga los dos grupos ya seleccionaods se reemplaza el primero por el segundo y se le da la segunda posicion al seleccionado
-                    setGrupoA([grupoA[1], country])
+                    //En caso de que se tenga los dos grupos ya seleccionaods se reemplaza el primero por el equipo seleccionado
+                    setGrupoA([country])
                 }
                 break
             case 'B':
                 if (grupoB.length < 2) {
                     setGrupoB(grupoB => [...grupoB, country])
                 } else {
-                    setGrupoB([grupoB[1], country])
+                    setGrupoB([country])
                 }
                 break
             case 'C':
                 if (grupoC.length < 2) {
                     setGrupoC(grupoC => [...grupoC, country])
                 } else {
-                    setGrupoC([grupoC[1], country])
+                    setGrupoC([country])
                 }
                 break
             case 'D':
                 if (grupoD.length < 2) {
                     setGrupoD(grupoD => [...grupoD, country])
                 } else {
-                    setGrupoD([grupoD[1], country])
+                    setGrupoD([country])
                 }
                 break
             case 'E':
                 if (grupoE.length < 2) {
                     setGrupoE(grupoE => [...grupoE, country])
                 } else {
-                    setGrupoE([grupoE[1], country])
+                    setGrupoE([country])
                 }
                 break
             case 'F':
                 if (grupoF.length < 2) {
                     setGrupoF(grupoF => [...grupoF, country])
                 } else {
-                    setGrupoF([grupoF[1], country])
+                    setGrupoF([country])
                 }
                 break
             case 'G':
                 if (grupoG.length < 2) {
                     setGrupoG(grupoG => [...grupoG, country])
                 } else {
-                    setGrupoG([grupoG[1], country])
+                    setGrupoG([country])
                 }
                 break
             case 'H':
                 if (grupoH.length < 2) {
                     setGrupoH(grupoH => [...grupoH, country])
                 } else {
-                    setGrupoH([grupoH[1], country])
+                    setGrupoH([country])
                 }
                 break
             default:
@@ -102,8 +102,9 @@ const ClasificadosProvider = ({ children }) => {
         for (let i = 0; i < clasificados.length; i++) {
 
             let group = clasificados[i]
+            console.log(group)
             
-            if (group.length < 1) {
+            if (group.length < 2) {
                 errores.push(`Debe seleccionar primero y segundo del grupo ${getGrupoName(i)}`)
             }
         }

@@ -85,7 +85,7 @@ const GroupStage = () => {
           </div>
           <div className='btnContainer'>
             <button className='btn1' onClick={() => {
-              if (validateClasificados()) {
+              if (validateClasificados() === true) {
                 setNextRound(true)
               } else {
                 if (errores.length > 0) {
