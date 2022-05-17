@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
+import { clasificadosContext } from 'components/context/clasificadosContext'
+import React, { useContext } from 'react'
 
 const Final = ({ finalistas, tercerPuesto }) => {
 
-    const [ganadorFinal, setGanadorFinal] = useState([])
-    const [ganadorTercerPuesto, setGanadorTercerPuesto] = useState([])
+    const {clasificados, setGanadores } = useContext(clasificadosContext)
 
     return (
         <div className='finalContainer'>
@@ -15,10 +15,10 @@ const Final = ({ finalistas, tercerPuesto }) => {
                         country ?
                             <>
                                 <button className={
-                                    ganadorFinal.includes(country) ? 'country title success' : 'country title'
+                                    clasificados.ganadores.ganador.includes(country) ? 'country title success' : 'country title'
                                 } 
                                 onClick={
-                                    () => setGanadorFinal([country])
+                                    () => setGanadores(country, 'final')
                                 }>
                                     <img src={country.flag} alt="flag icon" />
                                     {country.name}
@@ -40,10 +40,10 @@ const Final = ({ finalistas, tercerPuesto }) => {
                         country ?
                             <>
                                 <button className={
-                                    ganadorTercerPuesto.includes(country) ? 'country title success' : 'country title'
+                                    clasificados.ganadores.tercero.includes(country) ? 'country title success' : 'country title'
                                 } 
                                 onClick={
-                                    () => setGanadorTercerPuesto([country])
+                                    () => setGanadores(country, 'tercerPuesto')
                                 }>
                                     <img src={country.flag} alt="flag icon" />
                                     {country.name}

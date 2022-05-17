@@ -7,6 +7,8 @@ import './sass/App.scss'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import GroupStage from 'components/group-stage/GroupStage';
 import NavbarPrediction from 'components/navbar/NavbarPrediction';
+import Finish from 'components/finish/Finish';
+import VerPrediction from 'components/prediction/VerPrediction';
 
 function App() {
   return (
@@ -23,13 +25,28 @@ function App() {
               <Footer />
             </>
           } />
-
+          {/* Prediction */}
           <Route path='/prediction' element={
             <>
-              <NavbarPrediction/>
+              <NavbarPrediction />
               <GroupStage />
             </>
           } />
+
+          {/* Prediction Finalizada */}
+          <Route path='/finish' element={
+            <>
+              <Finish />
+            </>
+          } />
+
+          {/* Ver Prediccion */}
+          <Route path='/:userId' element={
+            <>
+              <VerPrediction />
+            </>
+          } />
+
         </Routes>
       </Router>
     </>

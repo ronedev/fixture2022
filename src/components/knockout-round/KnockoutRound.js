@@ -1,16 +1,19 @@
 import { clasificadosContext } from 'components/context/clasificadosContext'
-import { cuartosContext } from 'components/context/cuartosContext'
+import { errorsContext } from 'components/context/errorsContext'
 import React, { useContext } from 'react'
+import toast, { Toaster } from 'react-hot-toast'
 import Cuartos from './Cuartos'
 
 const KnockoutRound = () => {
-    const { clasificados } = useContext(clasificadosContext)
 
-    const {cuartosA, cuartosB} = useContext(cuartosContext)
+    const { clasificados, validateFinalizar, setPrediction } = useContext(clasificadosContext)
+
+    const { errores } = useContext(errorsContext)
 
     const getOctavosA = () => {
         let octavosA = []
-        clasificados.forEach((grupo, idx) => {
+        const octavos = Object.values(clasificados.octavos)
+        octavos.forEach((grupo, idx) => {
             //Si el id es par se devolverá el primero del grupo y si el id es impar se devolvera el segundo
             const esPar = idx % 2 === 0
             esPar ? octavosA.push(grupo[0]) : octavosA.push(grupo[1])
@@ -21,7 +24,8 @@ const KnockoutRound = () => {
 
     const getOctavosB = () => {
         let octavosB = []
-        clasificados.forEach((grupo, idx) => {
+        const octavos = Object.values(clasificados.octavos)
+        octavos.forEach((grupo, idx) => {
             //Si el id es par se devolverá el primero del grupo y si el id es impar se devolvera el segundo
             const esPar = idx % 2 === 0
             esPar ? octavosB.push(grupo[1]) : octavosB.push(grupo[0])
@@ -34,19 +38,40 @@ const KnockoutRound = () => {
         <>
         <section className='knockoutRound'>
             <Octavos octavosEquipos={getOctavosA()} grupo={'A'} />
-            <Cuartos cuartosA={cuartosA} cuartosB={cuartosB}/>
+            <Cuartos cuartosA={clasificados.cuartos.A} cuartosB={clasificados.cuartos.B}/>
             <Octavos octavosEquipos={getOctavosB()} grupo={'B'} />
         </section>
         <div className='btnFinalizarContainer'>
-            <button className='btn1'>Finalizar</button>
+            <button className='btn1' onClick={() => {
+                if(validateFinalizar()){
+                    setPrediction()
+                }else{
+                    if(errores.length>0){
+                        toast(errores[0])
+                    }else{
+                        toast('Debe completar correctamente la predicción para finalizar')
+                    }
+                }
+            }}>Finalizar</button>
         </div>
+        <Toaster toastOptions={
+            {
+              style: {
+                color: '#1E213A',
+                fontFamily: 'Raleway',
+                fontWeight: '500',
+                backgroundColor: '#C7B95A',
+                fontSize: '12px'
+              }
+            }
+          } />
         </>
     )
 }
 
 const Octavos = ({octavosEquipos, grupo})=>{
 
-    const {setCountryCuartos, cuartosA, cuartosB} = useContext(cuartosContext)
+    const {setCountryCuartos, clasificados} = useContext(clasificadosContext)
     
     return(
         <div className='octavos'>
@@ -57,7 +82,7 @@ const Octavos = ({octavosEquipos, grupo})=>{
                         <>
                             {esPar && idx !== 0 && <span className='espacio'></span>}
                             <button className={
-                                cuartosA.includes(country) || cuartosB.includes(country) ? 'country title success' : 'country title'}
+                                clasificados.cuartos.A.includes(country) || clasificados.cuartos.B.includes(country) ? 'country title success' : 'country title'}
                             onClick={
                                 () => setCountryCuartos(idx, country, grupo)
                             }>

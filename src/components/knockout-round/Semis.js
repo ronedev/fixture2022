@@ -1,15 +1,15 @@
-import { finalContext } from 'components/context/finalContext'
+import { clasificadosContext } from 'components/context/clasificadosContext'
 import React, { useContext } from 'react'
 import Final from './Final'
 
 const Semis = ({ semisA, semisB }) => {
 
-    const { finalistas, tercerPuesto } = useContext(finalContext)
+    const { clasificados } = useContext(clasificadosContext)
 
     return (
         <>
             <SemisRonda equiposSemis={semisA} grupo={'A'}/>
-            <Final tercerPuesto={tercerPuesto} finalistas={finalistas} />
+            <Final tercerPuesto={clasificados.final.tercerPuesto} finalistas={clasificados.final.finalistas} />
             <SemisRonda equiposSemis={semisB} grupo={'B'}/>
         </>
     )
@@ -17,7 +17,7 @@ const Semis = ({ semisA, semisB }) => {
 
 const SemisRonda = ({ equiposSemis, grupo }) => {
 
-    const { finalistas, setCountryFinal } = useContext(finalContext)
+    const { clasificados, setCountryFinal } = useContext(clasificadosContext)
 
     return (
         <div className='semis'>
@@ -28,7 +28,7 @@ const SemisRonda = ({ equiposSemis, grupo }) => {
                     country ?
                         <>
                             <button className={
-                                finalistas.includes(country) ? 'country title success' : 'country title'} 
+                                clasificados.final.finalistas.includes(country) ? 'country title success' : 'country title'} 
                             onClick={
                                 () => setCountryFinal(idx, country, grupo, equiposSemis[idx === 0 ? 1 : 0])
                             }>

@@ -1,15 +1,15 @@
-import { semisContext } from 'components/context/semisContext'
+import { clasificadosContext } from 'components/context/clasificadosContext'
 import React, { useContext } from 'react'
 import Semis from './Semis'
 
 const Cuartos = ({ cuartosA, cuartosB }) => {
 
-    const { semisA, semisB } = useContext(semisContext)
+    const { clasificados } = useContext(clasificadosContext)
 
     return (
         <>
             <CuartosRonda cuartosEquipos={cuartosA} grupo={'A'} />
-            <Semis semisA={semisA} semisB={semisB} />
+            <Semis semisA={clasificados.semis.A} semisB={clasificados.semis.B} />
             <CuartosRonda cuartosEquipos={cuartosB} grupo={'B'} />
         </>
     )
@@ -17,7 +17,7 @@ const Cuartos = ({ cuartosA, cuartosB }) => {
 
 const CuartosRonda = ({ cuartosEquipos, grupo }) => {
 
-    const { semisA, semisB, setCountrySemis } = useContext(semisContext)
+    const { clasificados, setCountrySemis } = useContext(clasificadosContext)
 
     return (
         <div className='cuartos'>
@@ -29,7 +29,7 @@ const CuartosRonda = ({ cuartosEquipos, grupo }) => {
                         <>
                             {esPar && idx !== 0 && <span className='espacio'></span>}
                             <button className={
-                                semisA.includes(country) || semisB.includes(country) ? 'country title success' : 'country title'} 
+                                clasificados.semis.A.includes(country) || clasificados.semis.B.includes(country) ? 'country title success' : 'country title'} 
                             onClick={
                                 () => setCountrySemis(idx, country, grupo)
                             }>
