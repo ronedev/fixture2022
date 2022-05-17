@@ -1,5 +1,6 @@
 import { db } from "firebaseConfig";
 import React, { useEffect, useState } from "react";
+import { FormattedMessage } from "react-intl";
 import { useParams } from "react-router-dom";
 
 const VerPrediction = () => {
@@ -89,10 +90,14 @@ const VerPrediction = () => {
 };
 
 const Octavos = ({ octavosEquipos, grupo, cuartos }) => {
-  console.log(cuartos);
   return (
     <div className="octavos">
-      <h3 className="title">Octavos {grupo}</h3>
+      <h3 className="title">
+        <FormattedMessage
+          id="knockout.roundof16"
+          defaultMessage='Round of 16'
+        />
+         {grupo}</h3>
       {octavosEquipos.map((country, idx) => {
         let esPar = idx % 2 === 0;
         let estaEnCuartos = cuartos.map((cuartoPais) =>
@@ -127,7 +132,12 @@ const Octavos = ({ octavosEquipos, grupo, cuartos }) => {
 const Cuartos = ({ cuartosEquipos, grupo, semis }) => {
   return (
     <div className="cuartos">
-      <h3 className="title">Cuartos {grupo}</h3>
+      <h3 className="title">
+        <FormattedMessage 
+          id="knockout.quarter"
+          defaultMessage='Quarter finals'
+        />
+         {grupo}</h3>
       {cuartosEquipos.map((country, idx) => {
         let esPar = idx % 2 === 0;
         let estaEnSemis = semis.map((equipoSemis) =>
@@ -166,7 +176,12 @@ const Cuartos = ({ cuartosEquipos, grupo, semis }) => {
 const Semis = ({ semisEquipos, grupo, final }) => {
   return (
     <div className="semis">
-      <h3 className="title">Semis {grupo}</h3>
+      <h3 className="title">
+        <FormattedMessage 
+          id="knockout.semifinal"
+          defaultMessage='Semi-final'
+        />
+         {grupo}</h3>
       {semisEquipos.map((country, idx) => {
         let esPar = idx % 2 === 0;
         let estaEnLaFinal = final.finalistas.map((equipoSemis) =>
@@ -206,7 +221,12 @@ const Final = ({ finalistas, tercerPuesto, ganadores }) => {
   return (
     <div className="finalContainer">
       <div className="final">
-        <h3 className="title">Final</h3>
+        <h3 className="title">
+          <FormattedMessage 
+            id="knockout.final.final"
+            defaultMessage='Final'
+          />
+        </h3>
         {finalistas.map((country, idx) => {
           let esElGanador = ganadores.ganador.map(
             (equipoGanador) => equipoGanador.name === country.name ? true : false
@@ -239,7 +259,12 @@ const Final = ({ finalistas, tercerPuesto, ganadores }) => {
         })}
       </div>
       <div className="tercer">
-        <h3 className="title">Tercer puesto</h3>
+        <h3 className="title">
+          <FormattedMessage 
+            id="knockout.final.thirdPlace"
+            defaultMessage='Third place'
+          />
+        </h3>
         {tercerPuesto.map((country, idx) => {
           let esPar = idx % 2 === 0;
           let esElGanador = ganadores.tercero.map(

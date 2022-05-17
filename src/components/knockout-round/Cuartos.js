@@ -1,5 +1,6 @@
 import { clasificadosContext } from 'components/context/clasificadosContext'
 import React, { useContext } from 'react'
+import { FormattedMessage } from 'react-intl'
 import Semis from './Semis'
 
 const Cuartos = ({ cuartosA, cuartosB }) => {
@@ -21,11 +22,16 @@ const CuartosRonda = ({ cuartosEquipos, grupo }) => {
 
     return (
         <div className='cuartos'>
-            <h3 className='title'>Cuartos {grupo}</h3>
+            <h3 className='title'>
+                <FormattedMessage 
+                    id='knockout.quarter'
+                    defaultMessage='Quarter finals'
+                />
+                 {grupo}</h3>
             {cuartosEquipos.map((country, idx) => {
                 let esPar = idx % 2 === 0
                 return (
-                    country ?
+                    country.length > 0 ?
                         <>
                             {esPar && idx !== 0 && <span className='espacio'></span>}
                             <button className={

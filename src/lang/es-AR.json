@@ -20,5 +20,18 @@
     "use.description": "Una vez en la página de predicción verás los grupos y sus correspondientes paises, en la primer ronda lo unico que debes hacer es seleccionar quien crees que saldrá primero y segundo de cada grupo. En la ronda de eliminatorias se debe ir haciendo click en el pais que crees que ganará el partido de cada fecha e ir avanzando en base a tus elecciones. ¡Disfrutalo!",
     "use.btn": "Iniciar predicción",
 
+    "groupStage.first": "Primero",
+    "groupStage.second": "Segundo",
+    "groupStage.removed": "Eliminado",
+    "groupStage.btnNextRound": "Siguiente ronda",
+    "groupStage.group": "Grupo ",
+
+    "knockout.roundof16": "Octavos ",
+    "knockout.quarter": "Cuartos ",
+    "knockout.semifinal": "Semi final ",
+    "knockout.final.final": "Final",
+    "knockout.final.thirdPlace": "Tercer puesto",
+    "knockout.finish": "Finalizar",
+
     "footer.text": "Desarrollado con ❤ por Agustin Vera"
 }

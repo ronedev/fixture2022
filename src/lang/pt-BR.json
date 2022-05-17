@@ -20,5 +20,18 @@
     "use.description": "Uma vez na página de previsão, você verá os grupos e seus países correspondentes, na primeira rodada tudo o que você precisa fazer é selecionar quem você acha que sairá primeiro e segundo em cada grupo. Na rodada de eliminação, você deve clicar no país que acha que vencerá a partida em cada data e avançar com base em suas escolhas. Apreciá-lo!",
     "use.btn": "Iniciar previsão",
 
+    "groupStage.first": "Primeiro lugar",
+    "groupStage.second": "Segundo lugar",
+    "groupStage.removed": "Deletado",
+    "groupStage.btnNextRound": "Proxima rodada",
+    "groupStage.group": "Grupo ",
+
+    "knockout.roundof16": "Rodada de 16 ",
+    "knockout.quarter": "Quartas de final ",
+    "knockout.semifinal": "Semifinal ",
+    "knockout.final.final": "Final",
+    "knockout.final.thirdPlace": "Terceiro lugar",
+    "knockout.finish": "Finalizar",
+
     "footer.text": "Desenvolvido com ❤ por Agustin Vera"
 }

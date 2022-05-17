@@ -2,6 +2,7 @@ import { clasificadosContext } from 'components/context/clasificadosContext'
 import { errorsContext } from 'components/context/errorsContext'
 import React, { useContext } from 'react'
 import toast, { Toaster } from 'react-hot-toast'
+import { FormattedMessage } from 'react-intl'
 import Cuartos from './Cuartos'
 
 const KnockoutRound = () => {
@@ -52,7 +53,12 @@ const KnockoutRound = () => {
                         toast('Debe completar correctamente la predicción para finalizar')
                     }
                 }
-            }}>Finalizar</button>
+            }}>
+                <FormattedMessage 
+                    id='knockout.finish'
+                    defaultMessage='Finalize'
+                />
+            </button>
         </div>
         <Toaster toastOptions={
             {
@@ -75,7 +81,12 @@ const Octavos = ({octavosEquipos, grupo})=>{
     
     return(
         <div className='octavos'>
-            <h3 className='title'>Octavos {grupo}</h3>
+            <h3 className='title'>
+                <FormattedMessage 
+                    id='knockout.roundof16'
+                    defaultMessage='Round of 16'
+                />
+                 {grupo}</h3>
                 {octavosEquipos.map((country, idx) => {
                     let esPar = idx % 2 === 0
                     return (

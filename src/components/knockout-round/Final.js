@@ -1,5 +1,6 @@
 import { clasificadosContext } from 'components/context/clasificadosContext'
 import React, { useContext } from 'react'
+import { FormattedMessage } from 'react-intl'
 
 const Final = ({ finalistas, tercerPuesto }) => {
 
@@ -8,11 +9,16 @@ const Final = ({ finalistas, tercerPuesto }) => {
     return (
         <div className='finalContainer'>
             <div className='final'>
-                <h3 className='title'>Final</h3>
+                <h3 className='title'>
+                    <FormattedMessage 
+                        id='knockout.final.final'
+                        defaultMessage='Final'
+                    />
+                </h3>
                 {finalistas.map((country, idx) => {
                     let esPar = idx % 2 === 0
                     return (
-                        country ?
+                        country.length > 0 ?
                             <>
                                 <button className={
                                     clasificados.ganadores.ganador.includes(country) ? 'country title success' : 'country title'
@@ -33,11 +39,16 @@ const Final = ({ finalistas, tercerPuesto }) => {
                 })}
             </div>
             <div className='tercer'>
-                <h3 className='title'>Tercer puesto</h3>
+                <h3 className='title'>
+                    <FormattedMessage 
+                        id='knockout.final.thirdPlace'
+                        defaultMessage='Third place'
+                    />
+                </h3>
                 {tercerPuesto.map((country, idx) => {
                     let esPar = idx % 2 === 0
                     return (
-                        country ?
+                        country.length > 0 ?
                             <>
                                 <button className={
                                     clasificados.ganadores.tercero.includes(country) ? 'country title success' : 'country title'

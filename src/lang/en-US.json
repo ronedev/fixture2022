@@ -20,5 +20,18 @@
     "use.description": "Once on the prediction page you will see the groups and their corresponding countries, in the first round all you have to do is select who you think will come out first and second in each group. In the elimination round, you must click on the country that you think will win the match on each date and advance based on your choices. Enjoy it!",
     "use.btn": "Start prediction",
 
+    "groupStage.first": "First place",
+    "groupStage.second": "Second place",
+    "groupStage.removed": "Removed",
+    "groupStage.btnNextRound": "Next round",
+    "groupStage.group": "Group ",
+
+    "knockout.roundof16": "Round of 16 ",
+    "knockout.quarter": "Quarter finals ",
+    "knockout.semifinal": "Semi-final ",
+    "knockout.final.final": "Final",
+    "knockout.final.thirdPlace": "Third place",
+    "knockout.finish": "Finalize",
+
     "footer.text": "Developed whit ❤ by Agustin Vera"
 }

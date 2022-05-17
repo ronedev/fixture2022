@@ -5,6 +5,7 @@ import toast, { Toaster } from 'react-hot-toast'
 import { errorsContext } from 'components/context/errorsContext'
 import { clasificadosContext } from 'components/context/clasificadosContext'
 import KnockoutRound from 'components/knockout-round/KnockoutRound'
+import { FormattedMessage } from 'react-intl'
 
 const GroupStage = () => {
 
@@ -43,10 +44,15 @@ const GroupStage = () => {
 
   return (
     <>
-      {nextRound ? <KnockoutRound countrys={countrys}/> :
+      {nextRound ? <KnockoutRound countrys={countrys} /> :
         <section className='groupStageContainer'>
           <div className='examplesContainer'>
-            <h4 className='text'>Primero<br />
+            <h4 className='text'>
+              <FormattedMessage
+                id='groupStage.first'
+                defaultMessage='First place'
+              />
+              <br />
               <button className='country success'>
                 {/* Si country contiene algo se ejecuta el contenido */}
                 {countrys.length > 0 &&
@@ -57,7 +63,12 @@ const GroupStage = () => {
                 }
               </button>
             </h4>
-            <h4 className='text'>Segundo<br />
+            <h4 className='text'>
+              <FormattedMessage
+                id='groupStage.second'
+                defaultMessage='Second place'
+              />
+              <br />
               <button className='country warning'>
                 {/* Si country contiene algo se ejecuta el contenido */}
                 {countrys.length > 0 &&
@@ -68,7 +79,12 @@ const GroupStage = () => {
                 }
               </button>
             </h4>
-            <h4 className='text'>Eliminado<br />
+            <h4 className='text'>
+              <FormattedMessage
+                id='groupStage.removed'
+                defaultMessage='Removed'
+              />
+              <br />
               <button className='country error'>
                 {/* Si country contiene algo se ejecuta el contenido */}
                 {countrys.length > 0 &&
@@ -92,7 +108,12 @@ const GroupStage = () => {
                   toast(errores[0])
                 }
               }
-            }}>Siguiente ronda</button>
+            }}>
+              <FormattedMessage 
+                id='groupStage.btnNextRound'
+                defaultMessage='Next round'
+              />
+            </button>
           </div>
           <Toaster toastOptions={
             {
