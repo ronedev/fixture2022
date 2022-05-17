@@ -6,6 +6,11 @@
     align-items: center;
     justify-content: space-between;
     padding: 4rem;
+    @include tablet{
+        flex-direction: column;
+        padding: 4rem 1rem;
+        height: 100%;
+    }
     .headerDescription, .headerImage{
         z-index: 10;
     }
@@ -28,6 +33,18 @@
                 font-weight: 900;
             }
         }
+        @include tablet{
+            width: 80%;
+            h1{
+                font-size: 2.5rem;
+            }
+            p{
+                font-size: 1rem;
+            }
+            button{
+                width: 12rem;
+            }
+        }
     }
     .headerImage{
         height: 100%;
@@ -37,6 +54,12 @@
         img{
             width: 30rem;
             filter: drop-shadow(1rem 0rem 1rem rgba(0,0,0, .7));
+        }
+        @include tablet{
+            margin-top: 2rem;
+            img{
+                width: 15rem;
+            }
         }
     }
     .backgroundForm{

@@ -3,6 +3,11 @@
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    @include tablet{
+        height: 100vh;
+        flex-direction: column;
+        align-items: center;
+    }
     .octavos,.cuartos,.semis,.finalContainer{
         border: 1px solid $negro;
         padding: .5rem;
@@ -16,10 +21,36 @@
             display: flex;
             align-items: center;
         }
+        @include tablet{
+            display: flex;
+            align-items: center;
+            h3{
+                margin: 0 .5rem;
+            }
+            h2{
+                font-size: .7rem;
+            }
+            button{
+                font-size: 0;
+                font-weight: 0;
+                justify-content: center;
+                width: 2.5rem;
+                margin: 0 .3rem;
+                img{
+                    width: 2rem;
+                    height: auto;
+                }
+            }
+        }
     }
     .octavos{
         max-height: 85vh;
         grid-template-rows: repeat(15, 1fr);
+        @include tablet{
+            h3{
+                display: none;
+            }
+        }
     }
     .cuartos{
         grid-template-rows: repeat(7, 1fr);
@@ -40,12 +71,21 @@
         .final{
             .country{
                 width: 10rem;
+                img{
+                    width: 3rem;
+                }
             }
+        }
+        @include tablet{
+            gap: 0;
         }
     }
     .espacio{
         width: 5rem;
         height: 1rem;
+        @include tablet{
+            width: .1rem;
+        }
     }
 }
 .btnFinalizarContainer{

@@ -10,6 +10,12 @@
     h2{
         font-size: 2rem;
     }
+    @include tablet{
+        h2{
+            font-size: 1.8rem;
+            text-align: center;
+        }
+    }
     .countdown{
         display: flex;
         align-items: center;
@@ -27,6 +33,18 @@
         img{
             width: 4rem;
             margin: 0 4rem;
+        }
+        @include tablet{
+            flex-direction: column;
+            p{
+                font-size: 1.5rem;
+                span{
+                    font-size: 5rem;
+                }
+            }
+            img{
+                width: 3rem;
+            }
         }
     }
 }
