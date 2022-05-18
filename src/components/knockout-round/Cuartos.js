@@ -31,7 +31,7 @@ const CuartosRonda = ({ cuartosEquipos, grupo }) => {
             {cuartosEquipos.map((country, idx) => {
                 let esPar = idx % 2 === 0
                 return (
-                    country.length > 0 ?
+                    Object.values(country).length > 0 ?
                         <>
                             {esPar && idx !== 0 && <span className='espacio'></span>}
                             <button className={

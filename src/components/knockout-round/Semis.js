@@ -31,7 +31,7 @@ const SemisRonda = ({ equiposSemis, grupo }) => {
             {equiposSemis.map((country, idx) => {
                 let esPar = idx % 2 === 0
                 return (
-                    country.length > 0 ?
+                    Object.values(country).length > 0 ?
                         <>
                             <button className={
                                 clasificados.final.finalistas.includes(country) ? 'country title success' : 'country title'} 

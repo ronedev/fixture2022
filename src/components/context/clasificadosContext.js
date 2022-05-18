@@ -20,24 +20,24 @@ const ClasificadosProvider = ({ children }) => {
     const [grupoG, setGrupoG] = useState([])
     const [grupoH, setGrupoH] = useState([])
     //Estados de cuartos
-    const [equipo1A, setEquipo1A] = useState([])
-    const [equipo1B, setEquipo1B] = useState([])
-    const [equipo2A, setEquipo2A] = useState([])
-    const [equipo2B, setEquipo2B] = useState([])
-    const [equipo3A, setEquipo3A] = useState([])
-    const [equipo3B, setEquipo3B] = useState([])
-    const [equipo4A, setEquipo4A] = useState([])
-    const [equipo4B, setEquipo4B] = useState([])
+    const [equipo1A, setEquipo1A] = useState({})
+    const [equipo1B, setEquipo1B] = useState({})
+    const [equipo2A, setEquipo2A] = useState({})
+    const [equipo2B, setEquipo2B] = useState({})
+    const [equipo3A, setEquipo3A] = useState({})
+    const [equipo3B, setEquipo3B] = useState({})
+    const [equipo4A, setEquipo4A] = useState({})
+    const [equipo4B, setEquipo4B] = useState({})
     //Estados de semis
-    const [equipo1ASemis, setEquipo1ASemis] = useState([])
-    const [equipo1BSemis, setEquipo1BSemis] = useState([])
-    const [equipo2ASemis, setEquipo2ASemis] = useState([])
-    const [equipo2BSemis, setEquipo2BSemis] = useState([])
+    const [equipo1ASemis, setEquipo1ASemis] = useState({})
+    const [equipo1BSemis, setEquipo1BSemis] = useState({})
+    const [equipo2ASemis, setEquipo2ASemis] = useState({})
+    const [equipo2BSemis, setEquipo2BSemis] = useState({})
     //Estados de final y tercer puesto
-    const [equipoBFinal, setEquipoBFinal] = useState([])
-    const [equipoAFinal, setEquipoAFinal] = useState([])
-    const [terceroA, setTerceroA] = useState([])
-    const [terceroB, setTerceroB] = useState([])
+    const [equipoBFinal, setEquipoBFinal] = useState({})
+    const [equipoAFinal, setEquipoAFinal] = useState({})
+    const [terceroA, setTerceroA] = useState({})
+    const [terceroB, setTerceroB] = useState({})
     //Estado de ganadores ultimas rondas
     const [ganadorFinal, setGanadorFinal] = useState([])
     const [ganadorTercerPuesto, setGanadorTercerPuesto] = useState([])
@@ -160,7 +160,6 @@ const ClasificadosProvider = ({ children }) => {
     }
 
     const setCountryCuartos = (ronda, country, grupo) => {
-
         switch (ronda) {
             case 0:
                 if (grupo === 'A') {
@@ -302,10 +301,12 @@ const ClasificadosProvider = ({ children }) => {
         let errores = []
         addError(errores)
 
-        //Se evalua cada grupo si poseé menos de 2 grupos clasificados se agrega error al array
-        for (let i = 0; i < clasificados.octavos.length; i++) {
+        const octavos = Object.values(clasificados.octavos)
 
-            let group = clasificados.octavos[i]
+        //Se evalua cada grupo si poseé menos de 2 grupos clasificados se agrega error al array
+        for (let i = 0; i < octavos.length; i++) {
+
+            let group = octavos[i]
 
             if (group.length < 2) {
                 errores.push(`Debe seleccionar primero y segundo del grupo ${getGrupoName(i)}`)

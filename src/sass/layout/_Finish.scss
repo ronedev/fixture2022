@@ -1,0 +1,41 @@
+.finishContainer{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .finish{
+        background-color: #bcbcbc;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        width: 30rem;
+        height: 20rem;
+        padding: 1rem;
+        border-radius: 2rem;
+        h2, p{
+            color: $negro;
+            text-align: center;
+        }
+        .inputContainer{
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            gap: 2rem;
+            img{
+                width: 2rem;
+            }
+            input{
+                background-color: $blanco;
+                font-size: 1.2rem;
+                color: $negro;
+                font-family: $fuente_base;
+                border: 1px solid $principal;
+                border-radius: 1rem;
+                padding: 1rem;
+                width: 100%;
+                outline: none;
+            }
+        }
+    }
+}

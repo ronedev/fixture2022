@@ -18,7 +18,7 @@ const Final = ({ finalistas, tercerPuesto }) => {
                 {finalistas.map((country, idx) => {
                     let esPar = idx % 2 === 0
                     return (
-                        country.length > 0 ?
+                        Object.values(country).length > 0 ?
                             <>
                                 <button className={
                                     clasificados.ganadores.ganador.includes(country) ? 'country title success' : 'country title'
@@ -48,7 +48,7 @@ const Final = ({ finalistas, tercerPuesto }) => {
                 {tercerPuesto.map((country, idx) => {
                     let esPar = idx % 2 === 0
                     return (
-                        country.length > 0 ?
+                        Object.values(country).length > 0 ?
                             <>
                                 <button className={
                                     clasificados.ganadores.tercero.includes(country) ? 'country title success' : 'country title'

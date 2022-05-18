@@ -33,5 +33,10 @@
     "knockout.final.thirdPlace": "Third place",
     "knockout.finish": "Finalize",
 
+    "finish.title": "Congratulations!",
+    "finish.text": "You have finished your prediction, now share it with your friends: ",
+    "finish.btn": "Home",
+    "finish.alert": "URL copied to clipboard!",
+
     "footer.text": "Developed whit ❤ by Agustin Vera"
 }
