@@ -11,9 +11,17 @@
         display: block;
     }
     @include tablet{
+        height: 100%;
         padding: 4rem 2rem;
+        align-items: center;
         h2{
             font-size: 3rem;
+            margin: 0;
+        }
+    }
+    .useTitle{
+        @include tablet{
+            width: 80%;
         }
     }
     .use{
@@ -36,7 +44,7 @@
                 width: 15rem;
             }
             @include tablet{
-                width: 100%;
+                width: 80%;
                 button{
                     width: 12rem;
                 }

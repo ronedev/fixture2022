@@ -57,19 +57,28 @@ const Navbar = () => {
 
                 <div className={mobileMenuVisible ? 'mobileMenu active' : desactiveMobileMenu ? 'mobileMenu desactive' : 'mobileMenu'}>
                     <ul className='navList'>
-                        <li><a href="#home">
+                        <li onClick={()=>{
+                            setMobileMenuVisible(false)
+                            setDesactiveMobileMenu(true)
+                        }}><a href="#home">
                             <FormattedMessage
                                 id='nav.home'
                                 defaultMessage='Home'
                             />
                         </a></li>
-                        <li><a href="#uso">
+                        <li onClick={()=>{
+                            setMobileMenuVisible(false)
+                            setDesactiveMobileMenu(true)
+                        }}><a href="#uso">
                             <FormattedMessage
                                 id='nav.use'
                                 defaultMessage='Use'
                             />
                         </a></li>
-                        <li><a href="/prediction">
+                        <li onClick={()=>{
+                            setMobileMenuVisible(false)
+                            setDesactiveMobileMenu(true)
+                        }}><a href="/prediction">
                             <FormattedMessage
                                 id='nav.prediction'
                                 defaultMessage='Prediction'
