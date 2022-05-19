@@ -45,47 +45,65 @@ const VerPrediction = () => {
     getPrediction();
   });
   return (
-    <section className="knockoutRound">
-      {userPrediction && (
-        <>
-          <Octavos
-            octavosEquipos={getOctavosA()}
-            grupo={"A"}
-            cuartos={userPrediction.cuartosA}
-          />
-          <Cuartos
-            cuartosEquipos={userPrediction.cuartosA}
-            grupo={"A"}
-            semis={userPrediction.semisA}
-          />
-          <Semis
-            semisEquipos={userPrediction.semisA}
-            grupo={"A"}
-            final={userPrediction.final}
-          />
-          <Final
-            finalistas={userPrediction.final.finalistas}
-            tercerPuesto={userPrediction.final.tercerPuesto}
-            ganadores={userPrediction.ganadores}
-          />
-          <Semis
-            semisEquipos={userPrediction.semisB}
-            grupo={"B"}
-            final={userPrediction.final}
-          />
-          <Cuartos
-            cuartosEquipos={userPrediction.cuartosB}
-            grupo={"B"}
-            semis={userPrediction.semisB}
-          />
-          <Octavos
-            octavosEquipos={getOctavosB()}
-            grupo={"B"}
-            cuartos={userPrediction.cuartosB}
-          />
-        </>
-      )}
-    </section>
+    <>
+      <nav className="nav" style={{'justifyContent': 'center'}}>
+        <div className="logoNav" onClick={()=> window.location = '/'}>
+          <h2>
+            <span>World cup 2022 </span>
+             Prediction
+          </h2>
+        </div>
+      </nav>
+      <section className="knockoutRound">
+        {userPrediction && (
+          <>
+            <Octavos
+              octavosEquipos={getOctavosA()}
+              grupo={"A"}
+              cuartos={userPrediction.cuartosA}
+            />
+            <Cuartos
+              cuartosEquipos={userPrediction.cuartosA}
+              grupo={"A"}
+              semis={userPrediction.semisA}
+            />
+            <Semis
+              semisEquipos={userPrediction.semisA}
+              grupo={"A"}
+              final={userPrediction.final}
+            />
+            <Final
+              finalistas={userPrediction.final.finalistas}
+              tercerPuesto={userPrediction.final.tercerPuesto}
+              ganadores={userPrediction.ganadores}
+            />
+            <Semis
+              semisEquipos={userPrediction.semisB}
+              grupo={"B"}
+              final={userPrediction.final}
+            />
+            <Cuartos
+              cuartosEquipos={userPrediction.cuartosB}
+              grupo={"B"}
+              semis={userPrediction.semisB}
+            />
+            <Octavos
+              octavosEquipos={getOctavosB()}
+              grupo={"B"}
+              cuartos={userPrediction.cuartosB}
+            />
+          </>
+        )}
+      </section>
+      <div className="btnContainer" style={{'display': 'flex', 'justifyContent': 'center', 'margin': '1rem 0'}}>
+          <button className="btn1" onClick={() => window.location = '/'}>
+              <FormattedMessage 
+                id="verPrediction.btn"
+                defaultMessage='Make my prediction'
+              />
+          </button>
+      </div>
+    </>
   );
 };
 
@@ -95,9 +113,10 @@ const Octavos = ({ octavosEquipos, grupo, cuartos }) => {
       <h3 className="title">
         <FormattedMessage
           id="knockout.roundof16"
-          defaultMessage='Round of 16'
+          defaultMessage="Round of 16"
         />
-         {grupo}</h3>
+        {grupo}
+      </h3>
       {octavosEquipos.map((country, idx) => {
         let esPar = idx % 2 === 0;
         let estaEnCuartos = cuartos.map((cuartoPais) =>
@@ -133,11 +152,12 @@ const Cuartos = ({ cuartosEquipos, grupo, semis }) => {
   return (
     <div className="cuartos">
       <h3 className="title">
-        <FormattedMessage 
+        <FormattedMessage
           id="knockout.quarter"
-          defaultMessage='Quarter finals'
+          defaultMessage="Quarter finals"
         />
-         {grupo}</h3>
+        {grupo}
+      </h3>
       {cuartosEquipos.map((country, idx) => {
         let esPar = idx % 2 === 0;
         let estaEnSemis = semis.map((equipoSemis) =>
@@ -177,11 +197,9 @@ const Semis = ({ semisEquipos, grupo, final }) => {
   return (
     <div className="semis">
       <h3 className="title">
-        <FormattedMessage 
-          id="knockout.semifinal"
-          defaultMessage='Semi-final'
-        />
-         {grupo}</h3>
+        <FormattedMessage id="knockout.semifinal" defaultMessage="Semi-final" />
+        {grupo}
+      </h3>
       {semisEquipos.map((country, idx) => {
         let esPar = idx % 2 === 0;
         let estaEnLaFinal = final.finalistas.map((equipoSemis) =>
@@ -222,14 +240,11 @@ const Final = ({ finalistas, tercerPuesto, ganadores }) => {
     <div className="finalContainer">
       <div className="final">
         <h3 className="title">
-          <FormattedMessage 
-            id="knockout.final.final"
-            defaultMessage='Final'
-          />
+          <FormattedMessage id="knockout.final.final" defaultMessage="Final" />
         </h3>
         {finalistas.map((country, idx) => {
-          let esElGanador = ganadores.ganador.map(
-            (equipoGanador) => equipoGanador.name === country.name ? true : false
+          let esElGanador = ganadores.ganador.map((equipoGanador) =>
+            equipoGanador.name === country.name ? true : false
           );
           let esPar = idx % 2 === 0;
           return country ? (
@@ -260,15 +275,15 @@ const Final = ({ finalistas, tercerPuesto, ganadores }) => {
       </div>
       <div className="tercer">
         <h3 className="title">
-          <FormattedMessage 
+          <FormattedMessage
             id="knockout.final.thirdPlace"
-            defaultMessage='Third place'
+            defaultMessage="Third place"
           />
         </h3>
         {tercerPuesto.map((country, idx) => {
           let esPar = idx % 2 === 0;
-          let esElGanador = ganadores.tercero.map(
-            (equipoGanador) => equipoGanador.name === country.name ? true : false
+          let esElGanador = ganadores.tercero.map((equipoGanador) =>
+            equipoGanador.name === country.name ? true : false
           );
           return country ? (
             <>

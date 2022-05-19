@@ -81,9 +81,13 @@
         }
     }
     .espacio{
-        width: 5rem;
+        width: 100%;
         height: 1rem;
+        border-bottom: 2px solid $gris;
         @include tablet{
+            border: none;
+            border-left: 2px solid $gris;
+            height: 100%;
             width: .1rem;
         }
     }

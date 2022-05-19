@@ -13,7 +13,7 @@ const Navbar = () => {
         <div className='navContainer'>
             <nav className='nav'>
                 <div className='logoNav'>
-                    <h2>Fixture <span>World Cup 2022</span></h2>
+                    <h2><span>World Cup 2022</span> Prediction</h2>
                     <ul className='navList'>
                         <li><a href="#home">
                             <FormattedMessage
