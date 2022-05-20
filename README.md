@@ -1,70 +1,46 @@
-# Getting Started with Create React App
+# World Cup 2022 Predictions
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Proyecto de práctica para realizar predicciones del siguiente mundial de futbol en Qatar. Al finalizar la prediccion podrá ser compartida mediante la url.
 
-## Available Scripts
+## ¿Qué aprendí con este proyecto? 🙇
 
-In the project directory, you can run:
+Con este proyecto seguí practicando mucho mas con los contextos en React, consumo de apis, react-router-dom, firebase, sass, hot toast y demas tecnologias que ya habia utilizado. Aprendí a utilizar [UUID](https://www.npmjs.com/package/uuid) y además el diseño de la web es completamente propio.
 
-### `npm start`
+## Historias de usuario 📝
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+* Como usuario deseo poder visualizar a cada pais participante con su bandera ✔️
+* Como usuario deseo poder visualizar los paises ordenados en sus grupos ✔️
+* Como usuario deseo poder seleccionar que pais avanza a la siguiente fase ✔️
+* Como usuario deseo poder compartir mi predicción con conocidos ✔️
+* Como usuario deseo poder visualizar de forma rápida los paises que van quedando eliminados y poder seleccionar un ganador final en 3er puesto y final ✔️
+* Como usuario deseo un header informativo sobre la app ✔️
+* Como usuario deseo un espacio dedicado a como utilizar la app ✔️
+* Como usuario deseo un contador al comienzo del mundial ✔️
+* Como usuario deseo seleccionar mi idioma (arg, ing, por) ✔️
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Construido con 🛠️
 
-### `npm test`
+* [React](https://es.reactjs.org/) - La libreria utilizada
+* [Sass](https://sass-lang.com/) - Para los estilos
+* [Firebase]([https://firebase.google.com/?hl=es]) - Backend as a service
+* [RestCountries]([https://restcountries.com/#api-endpoints-v3-all]) - Api de paises
+* [Git](https://git-scm.com/) - Para el control de versiones
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Autores ✒️
 
-### `npm run build`
+* **Agustín Vera** - *Trabajo Inicial* - [ronedev](https://github.com/ronedev)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Licencia 📄
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Este proyecto está bajo la Licencia MIT
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Expresiones de Gratitud 🎁
 
-### `npm run eject`
+* Comenta a otros sobre este proyecto 📢
+* Invitame una cerveza 🍺 o un café ☕. 
+* Da las gracias públicamente 🤓.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
+⌨️ con ❤️ por [ronedev](https://github.com/ronedev) 😊
